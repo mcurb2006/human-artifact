@@ -1,400 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, intitial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title> AI in Healthcare: Helpful Tool or Too Much Trust?</title>
+    <title>AI in Healthcare: Helpful Tool or Too Much Trust?</title>
 
-  <style>
-    *{
-      box-sizing: border-box;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4fbfc;
-      color: #173042;
-    }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4fbfc;
+            color: #173042;
+        }
 
-    header {
-      background: linear-gradient(135deg, #d9f2f4, #dce8ff);
-      text-align: center;
-      padding: 70px 20px 60px;
-    }
+        header {
+            background: linear-gradient(135deg, #d9f2f4, #dce8ff);
+            text-align: center;
+            padding: 70px 20px 60px;
+        }
 
-    .medical-icon {
-      font-size: 48px;
-      margin-bottom: 15px;
-    }
+        .medical-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
 
-    h1 {
-      font-size: 46px;
-      max-width: 850px;
-      margin: 0 auto 18px;
-      line-height: 1.1;
-    }
+        h1 {
+            font-size: 46px;
+            max-width: 850px;
+            margin: 0 auto 18px;
+            line-height: 1.1;
+        }
 
-    .subtitle {
-      max-width: 760px;
-      margin: auto;
-      font-size: 19px;
-      line-height: 1.6;
-      color: #405d6b;
-    }
+        .subtitle {
+            max-width: 760px;
+            margin: auto;
+            font-size: 19px;
+            line-height: 1.6;
+            color: #405d6b;
+        }
 
-    .container {
-      max-width: 1050px;
-      margin: auto;
-      padding: 65px 25px;
-    }
+        .container {
+            max-width: 1050px;
+            margin: auto;
+            padding: 65px 25px;
+        }
 
-    .section-title {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 12px;
-    }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
 
-    .section-intro {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 35px;
-      line-height: 1.6;
-      color: #526c78;
-    }
+        .section-intro {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 35px;
+            line-height: 1.6;
+            color: #526c78;
+        }
 
-       .mini-label {
-        text-align: center;
-        font-size: 13px;
-        font-weight: bold;
-        letter-spacing: 2px;
-        color: #526c78;
-        margin-bottom: 12px;
-    }
+        .mini-label {
+            text-align: center;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #526c78;
+            margin-bottom: 12px;
+        }
 
-    .year-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 22px;
-        margin-top: 35px;
-    }
+        .year-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 35px;
+        }
 
-    .year-card {
-        background: white;
-        padding: 28px;
-        border-radius: 18px;
-        text-align: center;
-        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-    }
+        .year-card {
+            background: white;
+            padding: 28px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+        }
 
-    .year-card.featured {
-        transform: scale(1.05);
-    }
+        .year-card.featured {
+            transform: scale(1.05);
+        }
 
-    .year {
-        display: block;
-        font-size: 17px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
+        .year {
+            display: block;
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-    .percent {
-        display: block;
-        font-size: 42px;
-        font-weight: bold;
-        margin-bottom: 18px;
-    }
+        .percent {
+            display: block;
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
 
-    .bar {
-        width: 100%;
-        height: 12px;
-        background: #e6eef1;
-        border-radius: 20px;
-        overflow: hidden;
-    }
+        .bar {
+            width: 100%;
+            height: 12px;
+            background: #e6eef1;
+            border-radius: 20px;
+            overflow: hidden;
+        }
 
-    .fill {
-        height: 100%;
-        background: #526c78;
-        border-radius: 20px;
-    }
+        .fill {
+            height: 100%;
+            background: #526c78;
+            border-radius: 20px;
+        }
 
-    .fill-38 {
-        width: 38%;
-    }
+        .fill-38 {
+            width: 38%;
+        }
 
-    .fill-48 {
-        width: 48%;
-    }
+        .fill-48 {
+            width: 48%;
+        }
 
-    .fill-72 {
-        width: 72%;
-    }
+        .fill-72 {
+            width: 72%;
+        }
 
-    .chart-note {
-        text-align: center;
-        margin-top: 22px;
-        font-size: 14px;
-        color: #526c78;
-    }
+        .chart-note {
+            text-align: center;
+            margin-top: 22px;
+            font-size: 14px;
+            color: #526c78;
+        }
 
-    .uses-section {
-        margin-top: 75px;
-    }
+        .uses-section {
+            margin-top: 75px;
+        }
 
-    .use-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 22px;
-        margin-top: 35px;
-    }
+        .use-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            margin-top: 35px;
+        }
 
-    .use-card {
-        background: white;
-        padding: 28px;
-        border-radius: 18px;
-        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
+        .use-card {
+            background: white;
+            padding: 28px;
+            border-radius: 18px;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
 
-    .use-card:hover {
-        transform: translateY(-7px);
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-    }
+        .use-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+        }
 
-    .use-icon {
-        font-size: 32px;
-        margin-bottom: 12px;
-    }
+        .use-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
 
-    .use-percent {
-        display: block;
-        font-size: 34px;
-        font-weight: bold;
-        color: #526c78;
-        margin-bottom: 8px;
-    }
+        .use-percent {
+            display: block;
+            font-size: 34px;
+            font-weight: bold;
+            color: #526c78;
+            margin-bottom: 8px;
+        }
 
-    .use-card h3 {
-        margin: 0 0 8px;
-        font-size: 20px;
-    }
+        .use-card h3 {
+            margin: 0 0 8px;
+            font-size: 20px;
+        }
 
-    .use-card p {
-        margin: 0;
-        line-height: 1.5;
-    }
+        .use-card p {
+            margin: 0;
+            line-height: 1.5;
+        }
 
-    .trust-section {
-        margin-top: 70px;
-        padding: 55px 35px;
-        background: #eef7f5;
-        border-radius: 24px;
-    }
+        .trust-section {
+            margin-top: 70px;
+            padding: 55px 35px;
+            background: #eef7f5;
+            border-radius: 24px;
+        }
 
-    .trust-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-        margin-top: 35px;
-    }
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 35px;
+        }
 
-    .trust-card {
-        background: white;
-        padding: 35px;
-        border-radius: 18px;
-        text-align: center;
-        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
+        .trust-card {
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
 
-    .trust-card:hover {
-        transform: translateY(-7px);
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-    }
+        .trust-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+        }
 
-    .trust-percent {
-        display: block;
-        font-size: 52px;
-        font-weight: bold;
-        color: #526c78;
-        margin-bottom: 15px;
-    }
+        .trust-percent {
+            display: block;
+            font-size: 52px;
+            font-weight: bold;
+            color: #526c78;
+            margin-bottom: 15px;
+        }
 
-    .trust-card p {
-        font-size: 17px;
-        line-height: 1.6;
-        margin: 0;
-    }
+        .trust-card p {
+            font-size: 17px;
+            line-height: 1.6;
+            margin: 0;
+        }
 
-    @media (max-width: 700px) {
-        .year-grid {
-            grid-template-columns: 1fr;
-        }
+        @media (max-width: 700px) {
+            .year-grid {
+                grid-template-columns: 1fr;
+            }
 
-        .use-grid {
-            grid-template-columns: 1fr;
-        }
+            .use-grid {
+                grid-template-columns: 1fr;
+            }
 
-        .trust-grid {
-            grid-template-columns: 1fr;
-        }
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
 
-        .year-card.featured {
-            transform: none;
-        }
+            .year-card.featured {
+                transform: none;
+            }
 
-        h1 {
-            font-size: 36px;
-        }
-    }
-
-    
- </style>
+            h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-  <div class="medical icon">🩺 + 🤖</div>
-  <h1>AI in Healthcare:<br>Helpful Tool or Too Much Trust?</h1>
+    <header>
+        <div class="medical-icon">🩺 + 🤖</div>
 
-  <p class="subtitle">
-    Artificial intelligence is becoming part of everyday healthcare.
-    It can help physicians save time and process information, but its 
-    growing role raises an important question: how much should we rely on it
-    when people's health is involved?
-  </p>
-</header>
+        <h1>AI in Healthcare:<br>Helpful Tool or Too Much Trust?</h1>
 
-<div class="container">
+        <p class="subtitle">
+            Artificial intelligence is becoming part of everyday healthcare.
+            It can help physicians save time and process information, but its
+            growing role raises an important question: how much should we rely
+            on it when people's health is involved?
+        </p>
+    </header>
 
-  <h2 class="section-title">AI is entering healthcare fast.</h2>
+    <div class="container">
 
-  <p class="section-intro">
-    The percentage of physicians reporting that they incorporate at least 
-    one AI use case into their practice has increased considerably in only
-    a few years.
-  </p>
+        <section class="growth-section">
 
-  <div class="growth-chart">
+            <p class="mini-label">AI ADOPTION</p>
 
-  <div class="year-card">
-    <span class="year">2023</span>
-    <span class="percent">38%</span>
-    <div class="bar">
-      <div class="fill fill-38"></div>
-    </div>
-  </div>
+            <h2 class="section-title">
+                AI is entering healthcare fast.
+            </h2>
 
-  <div class="year-card">
-    <span class="year">2024</span>
-    <span class="percent">48%</span>
-    <div class="bar">
-      <div class="fill fill-48"></div>
-    </div>
-  </div>
+            <p class="section-intro">
+                The percentage of physicians reporting that they incorporate
+                at least one AI use case into their practice has increased
+                considerably in only a few years.
+            </p>
 
-  <div class="year-card featured">
-    <span class="year">2026</span>
-    <span class="percent">72%</span>
-    <div class="bar">
-      <div class="fill fill-72"></div>
-    </div>
-  </div>
+            <div class="year-grid">
 
-</div>
+                <div class="year-card">
+                    <span class="year">2023</span>
+                    <span class="percent">38%</span>
 
-<p class="chart-note">
-  Physicians incorporating at least one AI use case into their practice
-</p>
+                    <div class="bar">
+                        <div class="fill fill-38"></div>
+                    </div>
+                </div>
 
-<section class="uses-section">
+                <div class="year-card">
+                    <span class="year">2024</span>
+                    <span class="percent">48%</span>
 
-  <p class="mini-label">AI IN PRACTICE</p>
+                    <div class="bar">
+                        <div class="fill fill-48"></div>
+                    </div>
+                </div>
 
-  <h2 class="section-title">
-    So what are physicians using AI for?
-  </h2>
+                <div class="year-card featured">
+                    <span class="year">2026</span>
+                    <span class="percent">72%</span>
 
-  <p class="section-intro">
-    AI is not only being explored for diagnosis. Physicians are also using
-    it for everyday tasks like reviewing medical information and reducing
-    time spent on documentation.
-  </p>
+                    <div class="bar">
+                        <div class="fill fill-72"></div>
+                    </div>
+                </div>
 
-  <div class="use-grid">
+            </div>
 
-    <div class="use-card">
-      <div class="use-icon">🔬</div>
-      <span class="use-percent">39%</span>
-      <h3>Medical Research</h3>
-      <p>Summarizing medical research and standards of care.</p>
-    </div>
+            <p class="chart-note">
+                Physicians incorporating at least one AI use case into their practice
+            </p>
 
-    <div class="use-card">
-      <div class="use-icon">📋</div>
-      <span class="use-percent">30%</span>
-      <h3>Patient Care Plans</h3>
-      <p>Helping create discharge instructions, care plans and progress notes.</p>
-    </div>
+        </section>
 
-    <div class="use-card">
-      <div class="use-icon">📝</div>
-      <span class="use-percent">28%</span>
-      <h3>Documentation</h3>
-      <p>Assisting with clinical documentation and reducing administrative work.</p>
-    </div>
 
-    <div class="use-card">
-      <div class="use-icon">🩻</div>
-      <span class="use-percent">17%</span>
-      <h3>Diagnosis</h3>
-      <p>Supporting physicians during diagnostic decision making.</p>
-    </div>
+        <section class="uses-section">
 
-  </div>
+            <p class="mini-label">AI IN PRACTICE</p>
 
- </section
-     <section class="trust-section">
+            <h2 class="section-title">
+                So what are physicians using it for?
+            </h2>
 
-    <p class="mini-label">THE PATIENT PERSPECTIVE</p>
+            <p class="section-intro">
+                AI is not only being explored for diagnosis. Physicians are
+                also using it for everyday tasks like reviewing medical
+                information and reducing time spent on documentation.
+            </p>
 
-    <h2 class="section-title">
-      But are patients ready to trust it?
-    </h2>
+            <div class="use-grid">
 
-    <p class="section-intro">
-      As AI becomes more common in healthcare, many Americans are still
-      cautious about how much it should be involved in decisions about
-      their health.
-    </p>
-       
-    <div class="trust-grid">
+                <div class="use-card">
+                    <div class="use-icon">🔬</div>
+                    <span class="use-percent">39%</span>
+                    <h3>Medical Research</h3>
+                    <p>Summarizing medical research and standards of care.</p>
+                </div>
 
-    <div class="trust-card">
-        <span class="trust-percent">60%</span>
-        <p>
-            of Americans said they would feel uncomfortable if their healthcare
-            provider relied on AI for diagnosis or treatment recommendations.
-        </p>
-    </div>
+                <div class="use-card">
+                    <div class="use-icon">📋</div>
+                    <span class="use-percent">30%</span>
+                    <h3>Patient Care Plans</h3>
+                    <p>
+                        Helping create discharge instructions, care plans
+                        and progress notes.
+                    </p>
+                </div>
 
-    <div class="trust-card">
-        <span class="trust-percent">75%</span>
-        <p>
-            said they were more concerned that healthcare providers
-          will adopt AI too quickly before fully understanding
-          its risks. 
-        </p>
-    </div>
+                <div class="use-card">
+                    <div class="use-icon">📝</div>
+                    <span class="use-percent">28%</span>
+                    <h3>Documentation</h3>
+                    <p>
+                        Assisting with clinical documentation and reducing
+                        administrative work.
+                    </p>
+                </div>
 
-</div>
+                <div class="use-card">
+                    <div class="use-icon">🩻</div>
+                    <span class="use-percent">17%</span>
+                    <h3>Diagnosis</h3>
+                    <p>
+                        Supporting physicians during diagnostic decision making.
+                    </p>
+                </div>
 
-</section>
-       
-</div>
+            </div>
+
+        </section>
+
+
+        <section class="trust-section">
+
+            <p class="mini-label">THE PATIENT PERSPECTIVE</p>
+
+            <h2 class="section-title">
+                But are patients ready to trust it?
+            </h2>
+
+            <p class="section-intro">
+                As AI becomes more common in healthcare, many Americans are
+                still cautious about how much it should be involved in
+                decisions about their health.
+            </p>
+
+            <div class="trust-grid">
+
+                <div class="trust-card">
+                    <span class="trust-percent">60%</span>
+                    <p>
+                        of Americans said they would feel uncomfortable if
+                        their healthcare provider relied on AI for diagnosis
+                        or treatment recommendations.
+                    </p>
+                </div>
+
+                <div class="trust-card">
+                    <span class="trust-percent">75%</span>
+                    <p>
+                        said they were more concerned that healthcare providers
+                        would adopt AI too quickly before fully understanding
+                        its risks.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
 
 </body>
 </html>
